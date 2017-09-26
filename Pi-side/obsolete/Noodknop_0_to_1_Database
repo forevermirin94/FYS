@@ -1,0 +1,73 @@
+//noodknop
+void* noodknop (void* IFK) 
+{	
+	printf("Thread 3 created succesfully: noodknop\n");
+	sleep(2);
+	printf("Thread noodknop started\n");
+	int input;
+	//voor de insert
+	char* messageString = "Noodknop is ingedrukt";
+	//sla de status van input 1 op in input
+	CPhidgetInterfaceKit_getInputState(IFK, 1, &input);
+	char* jeVader = "1";
+	while (1)
+	{
+		//sla elke keer dat de loop loopt de waarde opnieuw op
+		CPhidgetInterfaceKit_getInputState(IFK, 1, &input);
+		//als de noodknop is ingedrukt
+		if (input) 
+		{
+			printf("Noodknop is ingedrukt\n");
+			mySQL("Noodknop is ingedrukt");
+			
+			MYSQL *conn;
+
+		//constants met verbindingsinfo
+		const char*	server	 = "get.rekt.info" ;
+		const char*	user 	 = "upload";
+		const char*	password = "IT_101-FYS";
+		const char*	database = "Project_FYS";
+
+		//verbinding met de database aanmaken
+		conn = mysql_init(NULL);
+		if (!mysql_real_connect(conn, server, user, password, database, 0, NULL, 0))
+		{
+			fprintf(stderr, "%s\n", mysql_error(conn));
+			exit(1);
+		}
+
+
+		//waarden injecten in de table
+		//char* zijn char arrays. Er bestaat geen string datatype in C.
+		const char* insert = "UPDATE Setting SET noodsituatie = 1";
+					
+				
+		//nieuwe char array aanmaken voor de uiteindelijke insert command
+		char* statementOne;
+					statementOne = malloc(strlen(insert) + 1 + 300); 	
+					strcpy(statementOne, insert);
+					
+
+		//uitprinten van de gegevens
+		printf("%s", statementOne, "\n"); //debugfunctie, print de geformuleerde statement naar de commandline
+
+		//de query: conn is de verbinding met server, statement is de geprepareerde char array met de insert statement
+		if (mysql_query(conn, ((char*) statementOne)) !=0)
+		{
+			exit(1);
+		}
+		//mysql verbinding sluiten.
+		mysql_close(conn);
+		//30 seconden wachten voordat er een nieuwe meting wordt gedaan
+		sleep(30);
+
+			//wacht totdat de knop weer is losgelaten, ivm spam in database
+			do {
+				sleep(0.2);
+				CPhidgetInterfaceKit_getInputState(IFK, 1, &input);
+			} while (input);
+		}
+		//wacht 5 seconden voordat de noodknop weer wordt ingedrukt, voorkomt spam in de database
+		sleep(5);
+	}
+}

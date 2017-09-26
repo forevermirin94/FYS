@@ -1,0 +1,7 @@
+Wat hebben we hier?
+
+obsolete/	restanten, oude files, deprecated spul, etc
+shell/		shellscripts
+CameraSql.c	sql statement voor het injecten van een timestamp, gebruikt door cameraScript.sh
+main.c		alle programmacode voor de Pi, combined in 1 file
+README		deze file, duh

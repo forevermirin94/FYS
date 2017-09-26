@@ -1,0 +1,117 @@
+* {
+	/*border: 1px dashed red;*/
+	padding: 0px, 0px, 0px, 0px;
+}
+html { 
+  background: url(../images/airplane.jpg) no-repeat center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+body {
+	width: 100%;
+  	height: 100%;
+	overflow: hidden; /*Dit zorgt ervoor dat er geen scrollbars zijn!*/
+}
+.container {
+	display: block;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;	
+	margin: 0px 3% 0px 3%;
+	height: 100%;
+}
+.login_screen_outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.login_screen_middle {
+    display: table-cell;
+    vertical-align: top;
+}
+.login_screen_inner {
+	margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto; 
+	background-color: lightblue ;
+    border: 8px solid lightseagreen;
+	width: 480px;
+	border-radius:5px;
+}
+
+.Login_Textbox{
+	font-size:18px;
+	font-family:Arial;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	padding-bottom:5px;
+	padding-top:5px;
+	width: 275px;
+	max-width: 100%;
+	margin-top: 5px;
+	text-align:center;
+}
+.Login_Button {
+	-moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
+	-webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
+	box-shadow:inset 0px -3px 7px 0px #29bbff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+	background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+	background-color:#2dabf9;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+	width: 275px;
+	max-width: 100%;
+	font-style: bold;
+	margin-bottom: 15px;
+}
+.Login_Button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+	background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+	background-color:#0688fa;
+}
+.Login_Button:active {
+	position:relative;
+	top:1px;
+}
+.Login_Button:active {
+	position:relative;
+	top:1px;
+}
+.Foutmelding p{
+	font-size:18px;
+	color: darkred;
+	font-family:Arial;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	padding-bottom:5px;
+	padding-top:5px;
+	width: 275px;
+	max-width: 100%;
+	margin-top: 15px;
+	text-align:center;
+	background-color:#2dabf9;
+}
